@@ -45,7 +45,7 @@ modelMixin = Ember.Mixin.create({
       }
       return this.pagination(modelName, findOptions);
     }
-    return this.store.find(modelName, options.id);
+    return this.store.findRecord(modelName, options.id);
   },
   _setModel: function(controller, model) {
     if (!model) {
