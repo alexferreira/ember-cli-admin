@@ -1,8 +1,19 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <a class="navbar-brand" href="{{titleLinksTo}}">{{siteTitle}}</a>
-  <ul class="nav navbar-nav">
-      {{#each content as |navigation|}}
-          {{partial "admin/navigation/item"}}
-      {{/each}}
-  </ul>
-</div>
+
+{{!--  <a class="navbar-brand" href="{{titleLinksTo}}">{{siteTitle}}</a>
+<ul class="nav navbar-nav">
+    {{#each content as |navigation|}}
+        {{partial "admin/navigation/item"}}
+    {{/each}}
+</ul> --}}
+
+<div class="sidebar left sidebar-size-2 sidebar-offset-0 sidebar-skin-blue sidebar-visible-desktop" id="sidebar-menu" data-type="collapse">
+    <div class="sidebar-menu">
+        <div data-scrollable="" tabindex="1" style="overflow-y: hidden; outline: none;">
+            <ul>
+              {{#each content as |navigation index|}}
+                {{partial "admin/navigation/item"}}
+              {{/each}}
+            </ul>
+        </div>
+    </div>
+  </div>
