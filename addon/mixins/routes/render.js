@@ -10,6 +10,7 @@ renderMixin = Ember.Mixin.create({
       controller: controller
     });
     if (!(this._isLoading(this.controllerName) || this._isError(this.controllerName))) {
+      this._renderHeader(controller, model);
       this._renderNavigation(controller, model);
       this.controllerFor('breadcrumbs').set('resource', model);
       this._renderBreadcrumbs(controller, model);
@@ -18,6 +19,11 @@ renderMixin = Ember.Mixin.create({
       this._renderSidebar(controller);
       this._renderForm(controller, model);
     }
+  },
+  _renderHeader: function() {
+    return this.render('admin/header', {
+      outlet: 'header'
+    });
   },
   _renderNavigation: function() {
     return this.render('admin/navigation', {
