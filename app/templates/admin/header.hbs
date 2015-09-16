@@ -1,0 +1,31 @@
+<div class="navbar navbar-main navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#sidebar-menu" data-toggle="sidebar-menu" data-effect="st-effect-3" class="toggle pull-left visible-xs">
+        <i class="fa fa-bars"></i>
+      </a>
+      <!-- Chat Toggle Button on Mobile -->
+      <a href="#sidebar-chat" data-toggle="sidebar-menu" class="toggle pull-right visible-xs">
+          <i class="fa fa-comments"></i>
+      </a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand navbar-brand-primary hidden-xs" href="{{titleLinksTo}}">{{siteTitle}}</a>
+    </div>
+    
+    <div class="navbar-collapse collapse" id="collapse">
+            
+    </div>
+
+  </div>
+ {{!--  <a class="navbar-brand" href="{{titleLinksTo}}">{{siteTitle}}</a>
+  <ul class="nav navbar-nav">
+      {{#each content as |navigation|}}
+          {{partial "admin/navigation/item"}}
+      {{/each}}
+  </ul> --}}
+</div>
