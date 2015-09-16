@@ -15,10 +15,10 @@
     "pretender": "~0.9.0",
     "bootstrap-datepicker": "~1.4.0",
     "lodash": "~3.7.0",
-    "Faker": "~3.0.0"
+    "Faker": "~3.0.0",
+    "font-awesome": "~4.4.0"
   },
   "devDependencies": {
-    "bootstrap-sass-official": "~3.3.4",
     "typeahead.js": "~0.11.1",
     "jquery-ui-sortable": "*",
     "jquery-ui-touch-punch-improved": "*"
