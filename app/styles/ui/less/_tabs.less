@@ -1,0 +1,150 @@
+// GENERAL
+
+.tabbable {
+	margin-bottom: @line-height-computed;
+}
+
+.tab-content {
+	padding: @grid-gutter-width/2;
+	background: #fff;
+	border-bottom-left-radius: @border-radius-base;
+	border-bottom-right-radius: @border-radius-base;
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0 0 10px;
+	}
+}
+
+// DEFAULT STYLE
+
+.nav-tabs {
+    font-weight: 500;
+    > li {
+		> a {
+			color: lighten(@default-color, 20%);
+			&:hover {
+				background: transparent;
+				border-color: transparent;
+			}
+		}
+		&.active > a, &.active a:focus, &.active a:hover {
+			color: @primary-color;
+		}
+    }
+}
+
+// PRIMARY STYLE
+
+.tabs-primary {
+	> .nav-tabs {
+		> li.active {
+			> a, > a:focus, > a:hover {
+				background-color: @primary-color;
+				color: #fff;
+				border-right-color: @primary-color;
+			}
+		}
+	}
+}
+
+// VERTICAL TABS
+
+.tabs-vertical {
+	> .nav-tabs {
+		border-bottom: none;
+		background: lighten(@bg-default-light, 3%);
+		> li {
+			display: block;
+			float: none;
+			&.active {
+				margin-bottom: 0;
+				border-top: 1px solid @bg-default-light;
+				border-bottom: 1px solid @bg-default-light;
+				&:first-of-type {
+					border-top: none;
+				}
+				&:last-of-type {
+					border-bottom: none;
+				}
+				a {
+					margin: 0;
+				}
+			}
+		}
+	}
+	> .tab-content {
+		position: relative;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+		display: block;
+		content: "";
+	}
+	&.tabs-left {
+		> .nav-tabs {
+			float: left;
+			border-right: 1px solid @bg-default-light;
+			> li.active {
+				margin-right: -1px;
+			}
+		}
+		.tab-content {
+			border-top-right-radius: @border-radius-base;
+		}
+	}
+	&.tabs-right {
+		> .nav-tabs {
+			float: right;
+			border-left: 1px solid @bg-default-light;
+			> li.active {
+				margin-left: -1px;
+			}
+		}
+		.tab-content {
+			border-top-left-radius: @border-radius-base;
+		}
+	}
+}
+
+// ICONS ONLY
+
+.tabs-icons > .nav-tabs {
+    > li {
+        margin-left:0;
+		a {
+			i {
+				font-size: 18px;
+			}
+		}
+    }
+}
+
+// ICONS + TEXT ON MULTIPLE LINES
+
+.tabs-blocks .nav-tabs {
+    > li > a {
+        height: 60px;
+        line-height: 18px;
+		text-align: center;
+		padding: (@nav-link-padding);
+    }
+    a i {
+        display: block;
+        font-size: 18px;
+        padding: 0;
+    }
+}
+
+// POSITIONING
+
+.tabs-center-h {
+	> .nav-tabs {
+		text-align: center;
+		padding-left: @grid-gutter-width/2;
+		padding-right: @grid-gutter-width/2;
+		> li {
+			float: none;
+			display: inline-block;
+		}
+	}
+}

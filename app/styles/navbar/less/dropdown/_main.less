@@ -1,0 +1,38 @@
+// Dropdown Height & Image Fix
+.nav > li > a {
+    img {
+        margin-right: 3px;
+        // set the width of the image
+        width: 40px;
+    }
+    padding: 0 15px;
+    height: @navbar-height;
+    line-height: @navbar-height;
+}
+
+// Dropdown header
+.nav > li .dropdown-header {
+    font-weight: bold;
+    padding: 10px;
+    color: #B2B2B2;
+    border-top: 1px solid @navbar-default-border;
+}
+
+
+
+// Position all dropdown icons to right
+.nav > li.dropdown.user ul.dropdown-menu i {
+    float: right;
+    width: 15px;
+    text-align: center;
+}
+
+// Equal Width (toggle & menu)
+.nav > li.equal {
+    .dropdown-menu {
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+    }
+}

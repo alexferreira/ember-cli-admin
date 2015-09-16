@@ -1,0 +1,23 @@
+.sidebar .list-group {
+	a {
+		display: block;
+		text-decoration: none;
+	}
+	.list-group-item {
+		.badge {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		&.active {
+			a {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.sidebar[class*="sidebar"] {
+	.list-group li > a:hover {
+		background: none;
+	}
+}

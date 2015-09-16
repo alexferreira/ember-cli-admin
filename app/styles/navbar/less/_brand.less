@@ -1,0 +1,79 @@
+.navbar-brand {
+	height: @navbar-height;
+	line-height: @navbar-height;
+	padding: 0 @sidebar-horizontal-spacing;
+	.sidebar-l2 & {
+		width: @sidebar-width-2;
+	}
+	.sidebar-l3 & {
+		width: @sidebar-width-3;
+	}
+	font-size: 18px;
+	font-weight: 700;
+	&:hover {
+		text-decoration: none;
+	}
+	& + & {
+		margin-left: 0 !important;
+	}
+}
+
+@media (min-width: @grid-float-breakpoint) {
+	.navbar-brand {
+		.navbar-toggle-demo > .container &,
+		.navbar-toggle-demo > .container-fluid & {
+			margin-left: 0;
+		}
+	}
+}
+
+
+// Navbar
+.navbar-brand {
+    position: relative;
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &.navbar-brand-logo {
+		padding-left: 0;
+        img {
+            height: @navbar-height !important;
+			width: auto !important;
+			display: inline-block !important;
+			vertical-align: top;
+        }
+    }
+    &.navbar-brand-primary, &.navbar-brand-primary:hover {
+        background: @primary-color;
+		color:#fff;
+        a {
+            color:#fff;
+        }
+        &:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            height: 1px;
+            left: 0;
+            right: 0;
+            background: darken(@primary-color, 10%);
+        }
+    }
+
+    &.navbar-brand-danger, &.navbar-brand-danger:hover {
+        background: @danger-color;
+        a {
+			color:#fff;
+        }
+    }
+
+    &.navbar-brand-inverse, &.navbar-brand-inverse:hover {
+        background: @inverse-color;
+        a {
+            color:#fff;
+        }
+    }
+}

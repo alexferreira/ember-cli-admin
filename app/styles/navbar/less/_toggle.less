@@ -1,0 +1,30 @@
+.toggle {
+
+	.navbar & {
+		height: @navbar-height;
+		display: inline-block;
+		font-size: 20px;
+		padding: 0 @navbar-padding-vertical;
+		line-height: @navbar-height;
+		&.pull-right {
+			margin-right: @navbar-padding-horizontal/2;
+		}
+	}
+
+	.navbar-default & {
+		color: @navbar-default-color;
+		&.active {
+			background: darken(@primary-color, 4%);
+			color: #fff;
+		}
+	}
+
+	.navbar-primary & {
+		background: darken(@primary-color, 4%);
+		color: #fff;
+		&.active {
+			color: @primary-color;
+			background: @white;
+		}
+	}
+}

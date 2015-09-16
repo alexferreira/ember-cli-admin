@@ -1,0 +1,24 @@
+@media (min-width: @screen-sm) {
+	.sidebar-size-1 {
+		&, #dropdown-temp, #dropdown-temp > ul {
+			width: @sidebar-width-1;
+		}
+		[data-scrollable] {
+			> ul > li {
+				&.hasSubmenu > a:before {
+					display: none;
+				}
+				> a {
+					padding: 0;
+					text-align: center;
+					span {
+						display: none;
+					}
+				}
+			}
+		}
+		.category, .sidebar-block {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+// Regular Links (Level 0)
+.sidebar-menu [data-scrollable] > ul {
+	// Specific Style
+	> li {
+		// Main Buttons
+		> a {
+			line-height: @sidebar-item-height;
+			padding-left: 20px;
+		}
+		&.text-multiple > a {
+			.sidebar-size-2 &,
+			.sidebar-size-3 & {
+				display: table;
+				width: 100%;
+				height: @sidebar-item-height;
+				.title, .details {
+					display: block;
+					line-height: @sidebar-item-height / 2;
+				}
+				.details {
+					line-height: 20px;
+					font-weight: 300;
+					font-size: @sidebar-item-link-size - 1px;
+					position: relative;
+					top: -5px;
+				}
+				.text {
+					display: table-cell;
+					vertical-align: middle;
+				}
+				i {
+					display: table-cell;
+					line-height: (@sidebar-item-height / 2) + 4px;
+					vertical-align: top;
+				}
+			}
+		}
+		// All Links have on Hover Color
+		a:hover {
+			text-decoration: none;
+		}
+		&.open {
+			background: none;
+		}
+	}
+}

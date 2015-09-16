@@ -1,0 +1,49 @@
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: @font-weight-heading;
+}
+
+body > .container-fluid,
+body #content > .container-fluid,
+body > .container {
+	> h1, > h2, > h3, > h4, > h5, > h6 {
+		&:first-of-type {
+			margin-top: 5px;
+		}
+		margin-bottom: 20px;
+	}
+	> .media {
+		margin-top: 0;
+	}
+}
+
+.page-header {
+	margin-top: 0;
+}
+
+.text-h1 {
+	font-size: @font-size-h1;
+}
+.text-h2 {
+	font-size: @font-size-h2;
+}
+.text-h3 {
+	font-size: @font-size-h3;
+}
+.text-h4 {
+	font-size: @font-size-h4;
+}
+.text-h5 {
+	font-size: @font-size-h5;
+}
+
+.text-default {
+	color: @default-color;
+}

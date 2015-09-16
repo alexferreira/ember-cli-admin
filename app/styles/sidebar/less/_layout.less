@@ -1,0 +1,217 @@
+@media (min-width: @screen-sm) {
+
+	// Apply content margins
+
+	// Content with Single sidebars on each side
+	#content {
+
+		// left sidebars
+		.show-sidebar.sidebar-l1 & {
+			margin-left: @sidebar-width-1;
+		}
+		.show-sidebar.sidebar-l2 & {
+			margin-left: @sidebar-width-2;
+		}
+		.show-sidebar.sidebar-l3 & {
+			margin-left: @sidebar-width-3;
+		}
+
+		// right sidebars
+		.show-sidebar.sidebar-r1 & {
+			margin-right: @sidebar-width-1;
+		}
+		.show-sidebar.sidebar-r2 & {
+			margin-right: @sidebar-width-2;
+		}
+		.show-sidebar.sidebar-r3 & {
+			margin-right: @sidebar-width-3;
+		}
+	}
+
+	// footer
+	.container-fluid .footer {
+
+		// left sidebars
+		.show-sidebar.sidebar-l1 & {
+			left: @sidebar-width-1;
+		}
+		.show-sidebar.sidebar-l2 & {
+			left: @sidebar-width-2;
+		}
+		.show-sidebar.sidebar-l3 & {
+			left: @sidebar-width-3;
+		}
+
+		// right sidebars
+		.show-sidebar.sidebar-r1 & {
+			right: @sidebar-width-1;
+		}
+		.show-sidebar.sidebar-r2 & {
+			right: @sidebar-width-2;
+		}
+		.show-sidebar.sidebar-r3 & {
+			right: @sidebar-width-3;
+		}
+	}
+
+	// Multiple sidebars on each side
+	.show-sidebar {
+
+		// Content
+		.loop-sidebar-offset-sum(margin-left, "sidebar-l-sum", " #content");
+		.loop-sidebar-offset-sum(margin-right, "sidebar-r-sum", " #content");
+
+		// Footer
+		.loop-sidebar-offset-sum(left, "sidebar-l-sum", " .container-fluid .footer");
+		.loop-sidebar-offset-sum(right, "sidebar-r-sum", " .container-fluid .footer");
+	}
+}
+
+// Mobile first
+.sidebar {
+	position: fixed;
+	bottom: 0;
+	z-index: 3;
+	display: none;
+	top: 0;
+
+	body > &,
+	.st-container > & {
+		top: @sidebar-top;
+	}
+
+	// Left sidebars
+	&.left {
+		left: 0;
+    margin-top: 50px;
+		@media (min-width: @screen-sm-min) {
+			&.sidebar-offset-0 {
+				left: 0;
+			}
+
+			&.sidebar-offset-1 {
+				left: @sidebar-width-1;
+			}
+
+			&.sidebar-offset-2 {
+				left: @sidebar-width-2;
+			}
+
+			&.sidebar-offset-3 {
+				left: @sidebar-width-3;
+			}
+
+			.loop-sidebar-offset-sum(left, "sidebar-offset-sum");
+		}
+	}
+
+	// Right sidebars
+	&.right {
+		right: 0;
+		@media (min-width: @screen-sm-min) {
+			&.sidebar-offset-0 {
+				right: 0;
+			}
+
+			&.sidebar-offset-1 {
+				right: @sidebar-width-1;
+			}
+
+			&.sidebar-offset-2 {
+				right: @sidebar-width-2;
+			}
+
+			&.sidebar-offset-3 {
+				right: @sidebar-width-3;
+			}
+
+			.loop-sidebar-offset-sum(right, "sidebar-offset-sum");
+		}
+	}
+}
+
+// Sidebar Sizes
+.sidebar-size-1 {
+	width: @sidebar-width-1-mobile;
+}
+.sidebar-size-2 {
+	width: @sidebar-width-2-mobile;
+}
+.sidebar-size-3 {
+	width: @sidebar-width-3-mobile;
+}
+
+// Tablet resolutions and above
+@media (min-width: @screen-sm) {
+
+	// Sidebar Sizes
+	.sidebar-size-1 {
+		width: @sidebar-width-1;
+	}
+	.sidebar-size-2 {
+		width: @sidebar-width-2;
+	}
+	.sidebar-size-3 {
+		width: @sidebar-width-3;
+	}
+
+	// Sidebar Visibility
+	.show-sidebar .sidebar.sidebar-visible-desktop {
+		display: block;
+	}
+
+	// Display toggle button
+	.hide-sidebar {
+		.navbar {
+			[data-toggle="sidebar-menu"] {
+				display: inline-block !important;
+				&.visible-xs {
+					display: none !important;
+				}
+			}
+			.navbar-brand {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+// Mobile only
+@media (max-width: @screen-sm-min) {
+
+	// Prevent page scroll under the sidebar
+	.show-sidebar {
+		position: relative;
+		overflow: hidden;
+	}
+
+	// Display sidebars with ".sidebar-visible-mobile" when ".show-sidebar" is applied to the body
+	.show-sidebar .sidebar-visible-mobile {
+		display: block !important;
+	}
+}
+
+// Layout Fixed
+html.app-mobile {
+	.container, #content .container-fluid {
+		.sidebar {
+			position: absolute;
+			top: 0;
+		}
+	}
+}
+@media (min-width: @screen-sm) {
+	html.app-desktop {
+		.container, #content .container-fluid {
+			.sidebar {
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
+}
+
+// Split vertical
+.split-vertical #dropdown-temp {
+	display: table-row;
+}

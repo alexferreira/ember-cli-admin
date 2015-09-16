@@ -1,0 +1,295 @@
+.sidebar.sidebar-skin-deep-purple {
+    background: @sidebar-deep-purple-background;
+
+    // ../_block.less
+    .sidebar-block {
+        border-color: lighten(@sidebar-deep-purple-background, 4%);
+    }
+    p {
+        color: @sidebar-deep-purple-text;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        &, & > a {
+            color: #fff;
+        }
+    }
+
+    // ../_brand.less
+    #brand {
+        background-color: @sidebar-deep-purple-brand-background;
+        color: @sidebar-deep-purple-brand-color;
+        &:hover {
+            text-decoration: none;
+            color: @sidebar-deep-purple-brand-color-hover;
+        }
+    }
+
+    // Buttons
+    .btn-default {
+        .button-variant(#fff, @sidebar-deep-purple-item-link-active-background,@sidebar-deep-purple-item-link-active-background);
+    }
+
+    // Forms
+    .form-control {
+        background: darken(@sidebar-deep-purple-background, 4%);
+        border-color: darken(@sidebar-deep-purple-background, 4%);
+        color: @sidebar-deep-purple-text;
+    }
+
+    // ../_list_group.less
+    .list-group {
+        .list-group-item {
+            background: darken(@sidebar-deep-purple-background, 4%);
+            border-color: @sidebar-deep-purple-background;
+            .badge {
+                background: none;
+                color: #a9a9a9;
+            }
+            a {
+                color: @sidebar-deep-purple-item-link;
+                &:hover {
+                    color: #fff;
+                }
+            }
+            &.active {
+                a {
+                    color: #fff;
+                }
+            }
+        }
+        &.primary {
+            .list-group-item {
+                background: @deep-purple-500;
+                border-color: @deep-purple-500;
+                a {
+                    color: #fff;
+                }
+                .badge {
+                    color: #fff;
+                }
+                &.active {
+                    background: darken(@deep-purple-500, 8%);
+                }
+            }
+        }
+    }
+
+    // menus
+    .sidebar-menu {
+
+        > ul {
+            > li {
+                &.open > a, > a:hover, > a:focus {
+                    &,
+                    .nav > & {
+                        background: @sidebar-deep-purple-item-hover-background;
+                    }
+                }
+            }
+            a i {
+                color: @sidebar-deep-purple-item-icon-color;
+            }
+        }
+
+        ul {
+            li {
+                [class*="border"] {
+                    border-color: @sidebar-deep-purple-menu-border;
+                }
+
+                a:not([class]), a[class=""], a.collapsed {
+                    color: @sidebar-deep-purple-item-link;
+                }
+
+                &.hasSubmenu {
+                    > a:before {
+                        color: @sidebar-deep-purple-item-icon-color;
+                    }
+                }
+                &.active {
+                    > a {
+                        color: @sidebar-deep-purple-item-link-active;
+                        background: @sidebar-deep-purple-item-link-active-background;
+                        i {
+                            color: @sidebar-deep-purple-item-link-icon-active;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ../_category.less
+    .category {
+        color: @sidebar-deep-purple-menu-category;
+    }
+
+    hr {
+        border-color: @sidebar-deep-purple-hr;
+    }
+
+    // ../_regular.less
+    // Regular Links (Level 0)
+    .sidebar-menu > [data-scrollable] > ul {
+        > li {
+            a:hover {
+                color: @sidebar-deep-purple-item-hover-color;
+            }
+        }
+    }
+
+    // ../_submenu_first.less
+    .sidebar-menu [data-scrollable] ul li {
+        &.open {
+            > ul {
+                background: @sidebar-deep-purple-sub-item-background;
+                border-color: @sidebar-deep-purple-sub-item-border;
+            }
+        }
+        ul {
+            li.open {
+                background: @sidebar-deep-purple-background;
+            }
+        }
+    }
+
+    // ../_submenu_second.less
+    .sidebar-menu [data-scrollable] ul li ul li {
+        &.open {
+            > a {
+                background: @sidebar-deep-purple-sub-item-second-link-open;
+            }
+            > ul {
+                background: @sidebar-deep-purple-sub-item-second-background;
+                border-color: @sidebar-deep-purple-sub-item-second-border;
+            }
+        }
+        > ul {
+            li.open {
+                background: darken(@sidebar-deep-purple-background, 5%);
+            }
+        }
+    }
+
+    // ../_menu-news-feed.less
+    ul .news-item {
+        color: @sidebar-deep-purple-news-item-color;
+        background: @sidebar-deep-purple-news-item-background;
+
+        &:hover {
+            background: @sidebar-deep-purple-news-item-hover;
+            .media-object {
+                i {
+                    color: @sidebar-deep-purple-news-item-icon-color-hover;
+                }
+            }
+        }
+        .media-body {
+            a {
+                color: @sidebar-deep-purple-news-item-link;
+            }
+        }
+    }
+
+    // Forms
+    .checkbox label {
+        color: @sidebar-deep-purple-item-link;
+    }
+
+    // Slider
+    .slider {
+        color: @sidebar-deep-purple-item-link;
+        margin-bottom: 15px;
+        margin-top: 0;
+        &.media {
+            margin-bottom: 0;
+        }
+        .tooltip-inner {
+            background: lighten(@sidebar-deep-purple-background, 5%);
+            font-weight: bold;
+        }
+        .tooltip-arrow {
+            border-top-color: lighten(@sidebar-deep-purple-background, 5%);
+        }
+
+        .slider-track {
+            border: 1px solid darken(@sidebar-deep-purple-background, 5%);
+            box-shadow: none !important;
+            background-image: none;
+            background: darken(@sidebar-deep-purple-background, 5%);
+        }
+
+        .slider-handle {
+            background-color: #ffffff !important;
+            background-image: none !important;
+            box-shadow: none;
+            opacity: 1 !important;
+            border: 1px solid #efefef !important;
+            border-radius: 3px !important;
+            padding: 0px 2px 0 3px;
+            height: 20px;
+            margin-top: -6px !important;
+            display: inline-block;
+            color: @deep-purple-500;
+            i {
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+
+    // Datepicker
+    .datepicker {
+        padding: 0;
+        text-align: center;
+        .datepicker-inline {
+            .sidebar-size-2 & {
+				width: @sidebar-width-2;
+			}
+        }
+
+        table {
+            display: inline-block;
+            thead tr {
+                background: desaturate(@deep-purple-500, 13%) !important;
+                th {
+                    border-radius: 0;
+                    color: #fff;
+                }
+                th.datepicker-switch, th.next, th.prev {
+                    &:hover {
+                        color: #fff;
+                        background: desaturate(@deep-purple-500, 13%) !important;
+                    }
+
+                }
+            }
+            tr td {
+                &.day, .month, .year {
+                    color: @sidebar-deep-purple-item-link;
+                    &.old {
+                        color: lighten(@sidebar-deep-purple-background, 10%);
+                    }
+                    &.active {
+                        color: #fff;
+                        background: desaturate(@deep-purple-500, 13%) !important;
+                    }
+                    &:hover {
+                        background: darken(@sidebar-deep-purple-background, 10%);
+                    }
+                }
+            }
+        }
+    }
+    .progress {
+        background-color: darken(@sidebar-deep-purple-background, 5%);
+        height: 10px;
+        line-height: 10px;
+        border-radius: 5px;
+    }
+
+    .badge {
+        margin-left: 3px;
+        background: darken(@sidebar-deep-purple-background, 7%);
+    }
+}

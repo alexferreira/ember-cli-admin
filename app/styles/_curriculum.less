@@ -1,0 +1,65 @@
+.curriculum {
+	.panel-heading {
+		padding-bottom: 15px;
+		background: lighten(@bg-default-light, 5%);
+		h4 {
+			color:@primary-color;
+		}
+		p {
+			font-weight: normal;
+		}
+	}
+	.collapse-status {
+		display: none;
+		border: 1px solid @panel-default-border;
+		background: @bg-default-light;
+		border-radius: 0 0 5px 5px;
+		position: absolute;
+		top: -1px;
+		right: 20px;
+		padding: 5px 10px;
+		font-size: 12px;
+	}
+	.collapse-open {
+		display: block;
+	}
+	&.open .collapse-open {
+		display: none;
+	}
+	&.open .collapse-close {
+		display: block;
+	}
+
+	&.open > .panel-heading {
+		border-bottom: 1px solid @bg-default-light;
+	}
+	> .panel-heading {
+		cursor: pointer;
+		position: relative;
+	}
+	.list-group {
+		color: #929292;
+		.list-group-item {
+			cursor: pointer;
+		}
+		.list-group-item td:first-of-type {
+			font-size: 16px;
+			color: #a8a8a8;
+		}
+		.list-group-item td:last-of-type {
+			color: #a8a8a8;
+			font-size: 13px;
+		}
+		.list-group-item:hover {
+			background: lighten(#fafafa, 1%);
+			border-color: darken(#fafafa, 2%);
+		}
+		.list-group-item.active {
+			background: #fafafa;
+			border-color: darken(#fafafa, 4%);
+
+			table td {color: @default-color !important;}
+			font-weight: bold;
+		}
+	}
+}

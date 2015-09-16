@@ -1,0 +1,36 @@
+// General Navbar Styling
+.navbar-default {
+	border-bottom: 1px solid @navbar-border-bottom;
+
+	.navbar-nav {
+		.dropdown-default-style();
+	}
+
+	.navbar-brand {
+        @media (min-width: @screen-sm) {
+            border-right: 1px solid #efefef;
+        }
+	}
+
+	.navbar-nav > li {
+		@media (min-width: @screen-sm-min) {
+			border-right: 1px solid #efefef;
+		}
+
+		> a {
+			// change to navbar-default-variable
+			color: #6e7882;
+			font-weight: 500;
+			i {
+				color: #6e7882;
+			}
+			&:hover {
+				background: lighten(#efefef, 2%);
+				i {
+					color: @primary-color;
+				}
+			}
+
+		}
+	}
+}
