@@ -1,30 +1,47 @@
 <div class="row">
     <div class="col-md-9">
-        {{partial "admin/base/actions/batch"}}
-        {{partial "admin/base/table-settings"}}
-
-        <table class="table-view">
-            {{admin-table-head
-                activeTableAttributes=activeTableAttributes
-                sortFields=sortFields
-                orderAscending=orderAscending
-                sort=sort
-                action='sort'
-                batches=__batches
-                items=model.items
-                caseType=caseType
-            }}
-            {{admin-table-body
-                items=model.items
-                activeTableAttributes=activeTableAttributes
-                allActions=allActions
-                itemActions=itemActions
-                additionalActions=additionalActions
-                batches=__batches
-                adminAction='adminAction'
-                actionNew=actionNew
-            }}
-        </table>
+      <div class="panel panel-default">
+        <div class="panel-heading panel-heading-gray clearfix">
+          <div class="pull-right">
+            {{outlet 'actions'}}
+            <div class="btn-group per-page">
+              {{#admin-pagination-per-page count=25 action="changePerPage" perPage=perPage}}25{{/admin-pagination-per-page}}
+              {{#admin-pagination-per-page count=50 action="changePerPage" perPage=perPage}}50{{/admin-pagination-per-page}}
+              {{#admin-pagination-per-page count=100 action="changePerPage" perPage=perPage}}100{{/admin-pagination-per-page}}
+            </div>
+            {{partial "admin/base/actions/batch"}}
+            {{partial "admin/base/table-settings"}}
+          </div>
+          <h3>List</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-responsive v-middle">
+              {{admin-table-head
+                  activeTableAttributes=activeTableAttributes
+                  sortFields=sortFields
+                  orderAscending=orderAscending
+                  sort=sort
+                  action='sort'
+                  batches=__batches
+                  items=model.items
+                  caseType=caseType
+              }}
+              {{admin-table-body
+                  items=model.items
+                  activeTableAttributes=activeTableAttributes
+                  allActions=allActions
+                  itemActions=itemActions
+                  additionalActions=additionalActions
+                  batches=__batches
+                  adminAction='adminAction'
+                  actionNew=actionNew
+              }}
+          </table>
+        </div>
+        <div class="panel-footer padding-none text-center">
+          {{partial "admin/base/pagination"}}
+        </div>
+      </div>
     </div>
     <div class="col-md-3">
         {{#if isShowSearchForm}}
@@ -35,4 +52,4 @@
         {{/if}}
     </div>
 </div>
-{{partial "admin/base/pagination"}}
+
