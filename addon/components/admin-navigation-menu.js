@@ -5,8 +5,7 @@ export default Ember.Component.extend({
   layout: layout,
 
   tagName: "li",
-
-  classNameBindings: ["isActive:active"],
+  classNameBindings: ["isActive:active", "content.hasChildren:hasSubmenu"],
 
   isActive: Ember.computed('content', 'content.children', 'origContext.activeMenu', {
     get: function() {
