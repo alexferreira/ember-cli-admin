@@ -1,6 +1,6 @@
 <div class="search-container">
     <div class="panel panel-default">
-        <div class="panel-heading">Search</div>
+        <div class="panel-heading">{{format-html-message (intl-get 'commons.title.search')}}</div>
         <div class="panel-body">
             <form class="search" {{action 'search' on="submit"}}>
                 {{#each searchForm.fields as |field|}}
@@ -55,8 +55,8 @@
                     {{/if}}
                 {{/each}}
                 <div>
-                    <button class="search-button btn btn-success" type="submit">Search</button>
-                    <a href="#" class="search-button btn btn-danger" {{action 'clearSearchForm'}}>Clear</a>
+                    <button class="search-button btn btn-success" type="submit">{{format-html-message (intl-get 'commons.buttons.search')}}</button>
+                    <a href="#" class="search-button btn btn-danger" {{action 'clearSearchForm'}}>{{format-html-message (intl-get 'commons.buttons.clear')}}</a>
                 </div>
             </form>
         </div>

@@ -3,7 +3,7 @@
     <div class="pull-right">
       {{partial "admin/actions"}}
     </div>
-    <h3>Edit {{_name}}</h3>
+    <h3>{{format-html-message (intl-get 'commons.title.edit')}} {{format-html-message (intl-get controllerNameT)}}</h3>
   </div>
   <div class="panel-body">
     {{outlet 'form'}}

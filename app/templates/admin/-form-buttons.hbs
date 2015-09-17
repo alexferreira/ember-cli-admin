@@ -1,5 +1,5 @@
-<button class="btn btn-default" {{action "submit" on="click"}}>Submit</button>
+<button class="btn btn-default" {{action "submit" on="click"}}>{{format-html-message (intl-get 'commons.buttons.submit')}}</button>
 
-<button class="btn btn-primary" {{action "submit" false on="click"}}>Save and edit</button>
+<button class="btn btn-primary" {{action "submit" false on="click"}}>{{format-html-message (intl-get 'commons.buttons.saveEdit')}}</button>
 
-<button class="btn btn-warning" {{action "cancel" on="click"}}>Cancel</button>
+<button class="btn btn-warning" {{action "cancel" on="click"}}>{{format-html-message (intl-get 'commons.buttons.cancel')}}</button>

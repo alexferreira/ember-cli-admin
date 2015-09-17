@@ -4,15 +4,21 @@
         <div class="panel-heading panel-heading-gray clearfix">
           <div class="pull-right">
             {{partial "admin/actions"}}
+
             <div class="btn-group per-page">
-              {{#admin-pagination-per-page count=25 action="changePerPage" perPage=perPage}}25{{/admin-pagination-per-page}}
-              {{#admin-pagination-per-page count=50 action="changePerPage" perPage=perPage}}50{{/admin-pagination-per-page}}
-              {{#admin-pagination-per-page count=100 action="changePerPage" perPage=perPage}}100{{/admin-pagination-per-page}}
+              <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  <span class="fa fa-eye"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>{{#admin-pagination-per-page count=25 action="changePerPage" perPage=perPage}}25{{/admin-pagination-per-page}}</li>
+                <li>{{#admin-pagination-per-page count=50 action="changePerPage" perPage=perPage}}50{{/admin-pagination-per-page}}</li>
+                <li>{{#admin-pagination-per-page count=100 action="changePerPage" perPage=perPage}}100{{/admin-pagination-per-page}}</li>
+              </ul>
             </div>
             {{partial "admin/base/actions/batch"}}
             {{partial "admin/base/table-settings"}}
           </div>
-          <h3>List {{_name}}</h3>
+          <h3>{{format-html-message (intl-get 'commons.title.list')}} {{format-html-message (intl-get controllerNameT)}}</h3>
         </div>
         <div class="panel-body">
           <table class="table table-responsive v-middle">
