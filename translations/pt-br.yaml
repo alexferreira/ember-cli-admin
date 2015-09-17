@@ -1,0 +1,18 @@
+commons:
+  title:
+    list: 'Listar'
+    show: 'Visualizar'
+    edit: 'Editar'
+    new: 'Novo'
+    search: 'Pesquisar'
+  buttons:
+    search: 'Pesquisar'
+    clear: 'Limpar'
+    submit: 'Salvar'
+    saveEdit: 'Salvar e Editar'
+    cancel: 'Cancelar'
+    actionBath: 'Ações em massa'
+    perPage: 'Qtd. por Página'
+controller:
+  users: 'Usuários'
+  cars: 'Carros'
