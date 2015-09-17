@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import BaseActionsMixin from 'ember-cli-admin/mixins/controllers/base-actions';
+import IntMixin from 'ember-cli-admin/mixins/controllers/intl';
 import FileUploadMixin from 'ember-cli-admin/mixins/controllers/fileupload';
 import AttributesMixin from 'ember-cli-admin/mixins/controllers/attributes';
 import PaginationMixin from 'ember-cli-admin/mixins/controllers/pagination';
@@ -20,7 +21,7 @@ baseMixin = Ember.Mixin.create({
   })
 });
 
-baseMixin.reopen(BaseActionsMixin, FileUploadMixin, AttributesMixin, QueryParams, PaginationMixin, BatchActionsMixin,
+baseMixin.reopen(IntMixin, BaseActionsMixin, FileUploadMixin, AttributesMixin, QueryParams, PaginationMixin, BatchActionsMixin,
   FormActionsMixin, SearchMixin, SortMixin, SidebarMixin);
 
 export default baseMixin;
