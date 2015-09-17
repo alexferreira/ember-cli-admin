@@ -33,6 +33,9 @@ module.exports = function(environment) {
       'img-src': "*",
       'font-src': "'self' *.gstatic.com",
       'connect-src': "'self' ws://localhost:35729 ws://0.0.0.0:35729 http://localhost:3000",
+    },
+    intl: {
+      defaultLocale: 'pt-br' // default value 
     }
   };
 
