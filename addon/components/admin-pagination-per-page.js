@@ -4,9 +4,9 @@ import layout from '../templates/components/admin-pagination-per-page';
 export default Ember.Component.extend({
   layout: layout,
 
-  tagName: "button",
+  tagName: "a",
 
-  classNames: ["btn btn-default"],
+  // classNames: ["btn btn-default"],
   attributeBindings: ["type"],
   classNameBindings: ["isActive:active"],
 
