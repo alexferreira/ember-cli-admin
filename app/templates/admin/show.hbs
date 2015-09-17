@@ -1,6 +1,11 @@
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Show</div>
+  <div class="panel-heading">
+    <div class="pull-right">
+      {{partial "admin/actions"}}
+    </div>
+    <h3>Show {{_name}}</h3>
+  </div>
   <div class="panel-body">
     <table class="table table-striped">
       <thead><tr><th>Name</th><th>Value</th></tr></thead>

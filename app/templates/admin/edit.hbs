@@ -1,5 +1,10 @@
 <div class="panel panel-default">
-  <div class="panel-heading">Edit</div>
+  <div class="panel-heading">
+    <div class="pull-right">
+      {{partial "admin/actions"}}
+    </div>
+    <h3>Edit {{_name}}</h3>
+  </div>
   <div class="panel-body">
     {{outlet 'form'}}
   </div>

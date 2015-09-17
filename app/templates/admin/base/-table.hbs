@@ -3,7 +3,7 @@
       <div class="panel panel-default">
         <div class="panel-heading panel-heading-gray clearfix">
           <div class="pull-right">
-            {{outlet 'actions'}}
+            {{partial "admin/actions"}}
             <div class="btn-group per-page">
               {{#admin-pagination-per-page count=25 action="changePerPage" perPage=perPage}}25{{/admin-pagination-per-page}}
               {{#admin-pagination-per-page count=50 action="changePerPage" perPage=perPage}}50{{/admin-pagination-per-page}}
@@ -12,7 +12,7 @@
             {{partial "admin/base/actions/batch"}}
             {{partial "admin/base/table-settings"}}
           </div>
-          <h3>List</h3>
+          <h3>List {{_name}}</h3>
         </div>
         <div class="panel-body">
           <table class="table table-responsive v-middle">
