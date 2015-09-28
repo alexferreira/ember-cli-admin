@@ -33,9 +33,13 @@ modelMixin = Ember.Mixin.create({
     }
     if (!options.id) {
       var findOptions = {
-        page: this.page,
-        perPage: this.perPage,
-        orderAscending: this.orderAscending
+        filter: {
+          skip: this.page === 1 ? 0 : (this.page-1) * this.perPage,
+          limit: this.perPage,
+        },
+        // page: this.page,
+        // perPage: this.perPage,
+        // orderAscending: this.orderAscending
       };
       if(!Ember.isEmpty(this.q)){
         findOptions.q = this.q;
@@ -45,6 +49,21 @@ modelMixin = Ember.Mixin.create({
       }
       return this.pagination(modelName, findOptions);
     }
+
+    var filter = {
+      filter: {
+        included: []
+      }
+    };
+
+    this.store.modelFor(modelName).eachRelationship(function(key, rel){
+      if(rel.kind === 'hasMany'){
+        filter.filter['included'].push(key);
+      }
+    });
+
+    console.log(filter);
+
     return this.store.findRecord(modelName, options.id);
   },
   _setModel: function(controller, model) {
